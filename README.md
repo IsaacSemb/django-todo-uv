@@ -11,3 +11,7 @@ Quick links and summaries for key internal docs:
 
 Return here to jump between docs as you work!
 
+
+# IMPORTANT LINKS FOR RESOURCES
+- [Awesome Django](https://awesomedjango.org/)
+- [Django Official Site](https://www.djangoproject.com/)
