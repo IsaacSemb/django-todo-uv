@@ -1,0 +1,12 @@
+.show-me {
+    border: 10px solid blue;
+}
+
+/*/ INSERT_YOUR_CODE */
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
