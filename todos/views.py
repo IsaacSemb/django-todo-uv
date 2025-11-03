@@ -29,4 +29,3 @@ def todo_list_html(request):
     ]
 
     return render(request, 'todos/todos.html', {'todos': data})
-

@@ -11,3 +11,9 @@ def about(request):
 
 def contact(request):
     return render(request, 'website/contact.html', {})
+
+def login_page(request):
+    return render(request, 'website/login.html')
+
+def signup_page(request):
+    return render(request, 'website/signup.html')
