@@ -58,6 +58,7 @@
           </nav>
 
           <div class="flex items-center gap-4">
+            {% if not user.is_authenticated %}
             <div class="sm:flex sm:gap-4">
               <a
                 class="block rounded-md bg-gray-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-800"
@@ -66,6 +67,17 @@
                 Login
               </a>
             </div>
+            {% else %}
+            <div class="sm:flex sm:gap-4 items-center">
+              <span class="text-gray-500">Welcome, {{ user.username }}</span>
+              <a
+                class="block rounded-md bg-gray-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-800"
+                href="{% url 'website:logout' %}"
+              >
+                Log out
+              </a>
+            </div>
+            {% endif %}
 
             <button
               class="block rounded-sm bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden"
