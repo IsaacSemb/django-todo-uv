@@ -1,0 +1,53 @@
+{% extends 'website/base.html' %} 
+
+
+{% block content %}
+
+<form method='POST' action="{% url 'todos:add_todo' %}" class=" mx-auto pt-8 bg-white shadow-md rounded-md p-6 w-full max-w-md space-y-4">
+  {% csrf_token %}
+  <h2 class="text-xl font-semibold text-gray-800">Add a Todo</h2>
+
+    <!-- Title -->
+    <div>
+      <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+      <input type="text" id="title" name="title" required
+        class="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+    </div>
+
+    <!-- Description -->
+    <div>
+      <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+      <textarea id="description" name="description" rows="3"
+        class="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+    </div>
+
+    <!-- Status -->
+    <div>
+      <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
+      <select id="status" name="status"
+        class="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        
+        {% for todo in todo_status  %}
+        <option value="{{todo.0}}">{{todo.1}}</option>        
+        {% endfor %}
+        <option value="a">a</option>        
+        
+      </select>
+    </div>
+
+    <!-- Submit -->
+    <div class="flex justify-center gap-4">
+    <button type="submit"
+          class="w-full text-center p-4 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-md transition"
+          >
+      Create Todo
+    </button>
+    <a 
+    class="w-full text-center p-4 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-md transition"
+    href="{% url 'todos:todo_list_html' %}">
+          Back to Todo List
+    </a>
+    </div>
+  </form>
+
+{% endblock %}
