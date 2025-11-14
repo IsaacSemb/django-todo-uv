@@ -58,11 +58,11 @@
 
           
 
-
-          <form action="{% url 'todos:todo_list_html' %}" method="delete" style="display:inline">
+          <!-- delete todo -->
+          <form method="post" action="{% url 'todos:delete_todo' todo.id %}" style="display:inline">
             {% csrf_token %}
             <button type="submit" class="bg-red-100 rounded-lg p-2" title="Delete">
-              <a href="{% url 'todos:todo_list_html' %}"  class="bg-red-100 rounded-lg cursor-pointer">
+              <a class="bg-red-100 rounded-lg cursor-pointer">
                 <svg
                   class="text-red-300"
                   xmlns="http://www.w3.org/2000/svg"
@@ -84,8 +84,10 @@
 
 
 
-
-          <a class="bg-gray-100 rounded-lg cursor-pointer p-2">
+          <!-- edit todo -->
+          <a 
+            href="{% url 'todos:edit_todo' todo.id %}" 
+            class="bg-gray-100 rounded-lg cursor-pointer p-2">
             <svg
               class="text-gray-900"
               xmlns="http://www.w3.org/2000/svg"

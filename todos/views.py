@@ -26,11 +26,6 @@ def todo_list_json(request):
 
 def todo_list_html(request):
 
-    if request.method =='DELETE':
-        print('delete requested')
-        return redirect('todos:todo_list_html')
-        
-
     # check for the user
     user = request.user
 
@@ -60,6 +55,8 @@ def create_todo(request):
     it processes the form data and saves it to the database
     """
 
+    todo_status = Todo.STATUS_CHOICES
+
     # possible origin is the add todo form
     if request.method == 'POST':
 
@@ -73,23 +70,52 @@ def create_todo(request):
 
         return redirect('todos:todo_list_html')
 
+    # GET: Pass None for todo to indicate add mode
+    return render(request, "todos/add_todo.html", {
+        'todo_status': todo_status,
+        'todo': None
+    })
+
+
+def edit_todo(request, todo_id):
+    """
+    Edit view: GET shows form with existing todo data,
+    POST updates the todo in database
+    """
     todo_status = Todo.STATUS_CHOICES
 
-    return render(request, "todos/add_todo.html", {'todo_status':todo_status})
-
-
-
-def read_todo(request):
-    pass
-
-def read_todos(request):
-    pass
-
-def delete_todo(request):
+    if request.method == 'GET':
+        # Fetch the todo to edit
+        todo = Todo.objects.get(id=todo_id)
+        return render(request, "todos/add_todo.html", {
+            'todo_status': todo_status,
+            'todo': todo  # Pass todo object to populate form
+        })
     
+    # POST: Update the existing todo
+    if request.method == 'POST':
+        Todo.objects.filter(id=todo_id).update(
+            title=request.POST['title'],
+            description=request.POST['description'],
+            status=request.POST['status'],
+        )
+        return redirect('todos:todo_list_html')
+
+    return redirect('todos:todo_list_html')
+
+
+def delete_todo(request, todo_id):
+    
+    print('delete single todo requested')
+    print(todo_id)
+
+    Todo.objects.filter(id=todo_id).delete()
     
     return redirect('todos:todo_list_html')
 
 
 def delete_todos(request):
+    
+    print('delete multiple todos requested')
+
     return redirect('todos:todo_list_html')
