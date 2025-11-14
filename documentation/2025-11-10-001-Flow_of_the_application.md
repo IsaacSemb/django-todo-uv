@@ -73,9 +73,44 @@ and templating—before introducing Django REST Framework.
 
 ---
 
-### Personal Notes
+### Personal Notes & Observations
 
-- I now visually confirm redirects via browser dev tools—recognising those 302 hops clarifies what
-  actually happens across login/logout.
-- Keeping clean documentation like this will help “future me” revisit decisions quickly, especially
-  once I layer in DRF and compare workflows.
+**Network Inspector for Understanding Redirects (2025-11-10)**
+- Visual confirmation of 302 redirects via browser dev tools clarifies the login/logout flow.
+- Seeing the actual HTTP response codes reinforces understanding of the request/response cycle.
+- This helps distinguish between `render()` (200) and `redirect()` (302) behaviors.
+
+**Documentation Strategy**
+- Keeping clean, timestamped documentation helps "future me" revisit decisions quickly.
+- Especially valuable when layering in DRF and comparing pure Django vs. DRF workflows.
+
+---
+
+### Template Learning: URL Variable Assignment (2025-11-14)
+
+**Problem**: Wanted to reuse the same form template for both creating and editing todos, with the form action changing based on context.
+
+**Solution**: Discovered Django template variable assignment using the `as` keyword with `{% url %}`.
+
+**Pattern**:
+```django
+
+{% if todo %}
+  {% url 'todos:edit_todo' todo.id as form_action %}
+{% else %}
+  {% url 'todos:add_todo' as form_action %}
+{% endif %}
+
+<form action="{{ form_action }}" method="POST">
+  <!-- form fields -->
+</form>
+
+```
+
+**Key Insight**: The `as form_action` syntax allows us to:
+1. Conditionally resolve different URLs based on template context.
+2. Store the resolved URL string in a variable.
+3. Use that variable in HTML attributes (like `action=`).
+
+This is cleaner than duplicating the entire form or using multiple conditionals throughout the template.
+
