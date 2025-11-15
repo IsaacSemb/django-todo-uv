@@ -1,27 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import Todo
 
-def todo_list_html(request):
-
-    # check for the user
-    user = request.user
-
-    if not user or not user.is_authenticated:
-        return redirect('website:login')
-        
-    # get the todos for the user
-    todos = Todo.objects.filter(user=user)
-
-    data = [
-        {
-            'id':todo.id,
-            'title':todo.title,
-            'description':todo.description,
-            'status':todo.status,
-        } for todo in todos
-    ]
-
-    return render(request, 'todos/todos.html', {'todos': data})
 
 
 def create_todo(request):
@@ -53,8 +32,30 @@ def create_todo(request):
         'todo': None
     })
 
+def read_todos(request):
 
-def edit_todo(request, todo_id):
+    # check for the user
+    user = request.user
+
+    if not user or not user.is_authenticated:
+        return redirect('website:login')
+        
+    # get the todos for the user
+    todos = Todo.objects.filter(user=user)
+
+    data = [
+        {
+            'id':todo.id,
+            'title':todo.title,
+            'description':todo.description,
+            'status':todo.status,
+        } for todo in todos
+    ]
+
+    return render(request, 'todos/todos.html', {'todos': data})
+
+
+def update_todo(request, todo_id):
     """
     Edit view: GET shows form with existing todo data,
     POST updates the todo in database
