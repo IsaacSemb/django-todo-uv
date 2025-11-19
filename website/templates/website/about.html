@@ -1,0 +1,95 @@
+{% extends 'website/base.html' %}
+
+{% block title %}About - Todo App{% endblock %}
+
+{% block content %}
+<section class="bg-white py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+        About This Project
+      </h1>
+      
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        This todo application is a learning project designed to explore Django's powerful features 
+        and understand full-stack web development.
+      </p>
+
+      <div class="mt-10 space-y-8">
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-900">Learning Goals</h2>
+          <p class="mt-4 text-gray-600">
+            This project covers multiple approaches to building web applications:
+          </p>
+          <ul class="mt-4 space-y-3 text-gray-600">
+            <li class="flex gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 size-5 flex-shrink-0 text-gray-900">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Django ORM models, migrations, and database relationships</span>
+            </li>
+            <li class="flex gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 size-5 flex-shrink-0 text-gray-900">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Traditional Django views and templates</span>
+            </li>
+            <li class="flex gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 size-5 flex-shrink-0 text-gray-900">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Django REST Framework for API development</span>
+            </li>
+            <li class="flex gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 size-5 flex-shrink-0 text-gray-900">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Modern development tools like uv for package management</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-900">Technology Stack</h2>
+          <div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
+            <div class="rounded-lg border border-gray-200 p-4 text-center">
+              <p class="font-semibold text-gray-900">Django 5.2</p>
+              <p class="text-sm text-gray-600">Web Framework</p>
+            </div>
+            <div class="rounded-lg border border-gray-200 p-4 text-center">
+              <p class="font-semibold text-gray-900">DRF</p>
+              <p class="text-sm text-gray-600">REST API</p>
+            </div>
+            <div class="rounded-lg border border-gray-200 p-4 text-center">
+              <p class="font-semibold text-gray-900">SQLite</p>
+              <p class="text-sm text-gray-600">Database</p>
+            </div>
+            <div class="rounded-lg border border-gray-200 p-4 text-center">
+              <p class="font-semibold text-gray-900">Tailwind CSS</p>
+              <p class="text-sm text-gray-600">Styling</p>
+            </div>
+            <div class="rounded-lg border border-gray-200 p-4 text-center">
+              <p class="font-semibold text-gray-900">uv</p>
+              <p class="text-sm text-gray-600">Package Manager</p>
+            </div>
+            <div class="rounded-lg border border-gray-200 p-4 text-center">
+              <p class="font-semibold text-gray-900">Pytest</p>
+              <p class="text-sm text-gray-600">Testing</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-900">Project Goals</h2>
+          <p class="mt-4 text-gray-600">
+            This project serves as a comprehensive learning venture to understand Django's ecosystem, 
+            from traditional server-side rendering to modern API-driven architectures. By building a 
+            complete todo application with multiple approaches, we explore different patterns and 
+            best practices in Django development.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
