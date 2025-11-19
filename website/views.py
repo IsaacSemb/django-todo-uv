@@ -18,12 +18,9 @@ def login_page(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        print(request.POST)
-        print(list(request.POST))
 
         # authenticate here
         user = authenticate(request, username=username, password=password)
-        print(user)
 
         if user:
             login(request, user)
@@ -61,10 +58,7 @@ def signup_page(request):
 
 
 def logout_user(request):
-    
-    data = logout(request)
-    print(data)	
-
+    logout(request)
     return redirect('website:home')
 
 

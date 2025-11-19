@@ -20,11 +20,11 @@
           </p>
     
           <div class="mt-6 flex gap-4 sm:mt-8">
-            <a class="inline-block rounded border border-gray-900 bg-gray-900 px-6 py-3 font-medium text-white shadow-sm transition-colors hover:bg-gray-800" href="/todos/">
+            <a class="inline-block rounded border border-gray-900 bg-gray-900 px-6 py-3 font-medium text-white shadow-sm transition-colors hover:bg-gray-800" href="{% url 'todos:todo_list_html' %}">
               View Todos
             </a>
 
-            <a class="inline-block rounded border border-gray-300 px-6 py-3 font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-50" href="/todos/api/">
+            <a class="inline-block rounded border border-gray-300 px-6 py-3 font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-50" href="#">
               API Docs
             </a>
         </div>

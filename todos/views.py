@@ -83,10 +83,6 @@ def update_todo(request, todo_id):
 
 
 def delete_todo(request, todo_id):
-    
-    print('delete single todo requested')
-    print(todo_id)
-
     Todo.objects.filter(id=todo_id).delete()
     
     return redirect('todos:todo_list_html')
@@ -94,6 +90,4 @@ def delete_todo(request, todo_id):
 
 def delete_todos(request):
     
-    print('delete multiple todos requested')
-
     return redirect('todos:todo_list_html')
