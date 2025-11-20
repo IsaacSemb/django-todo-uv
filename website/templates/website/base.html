@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" href={% static 'website/images/favicon.ico' %}>
-    <link rel="stylesheet" href={% static 'website/css/styles.css' %}>
+    <link rel="icon" href={% static 'website/images/favicon.ico' %}> <link
+    rel="stylesheet" href={% static 'website/css/styles.css' %}>
 
     <!-- Tailwind CSS, later we will use the CLI to build the CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -53,7 +53,17 @@
                 </a>
               </li>
 
-           
+              {% if user.is_authenticated %}
+              <li>
+                <a
+                  class="text-gray-500 transition hover:text-gray-500/75"
+                  href="{% url 'todos:todo_list_html' %}"
+                >
+                  View Todos
+                </a>
+              </li>
+              {% endif %}
+
             </ul>
           </nav>
 
@@ -103,9 +113,7 @@
       </div>
     </header>
 
-    <main class='min-h-screen'>
-      {% block content %}{% endblock %}
-    </main>
+    <main class="min-h-screen">{% block content %}{% endblock %}</main>
 
     <footer class="bg-gray-100">
       <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
@@ -116,26 +124,36 @@
         <p
           class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500"
         >
-          A simple and powerful todo app built with Django to help you stay organized and productive.
+          A simple and powerful todo app built with Django to help you stay
+          organized and productive.
         </p>
 
         <ul
           class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12"
         >
           <li>
-            <a class="text-gray-700 transition hover:text-gray-700/75" href="{% url 'website:home' %}">
+            <a
+              class="text-gray-700 transition hover:text-gray-700/75"
+              href="{% url 'website:home' %}"
+            >
               Home
             </a>
           </li>
 
           <li>
-            <a class="text-gray-700 transition hover:text-gray-700/75" href="{% url 'website:about' %}">
+            <a
+              class="text-gray-700 transition hover:text-gray-700/75"
+              href="{% url 'website:about' %}"
+            >
               About
             </a>
           </li>
 
           <li>
-            <a class="text-gray-700 transition hover:text-gray-700/75" href="{% url 'website:contact' %}">
+            <a
+              class="text-gray-700 transition hover:text-gray-700/75"
+              href="{% url 'website:contact' %}"
+            >
               Contact
             </a>
           </li>
