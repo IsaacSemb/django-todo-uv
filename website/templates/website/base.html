@@ -29,7 +29,7 @@
             <ul class="flex items-center gap-6 text-sm">
               <li>
                 <a
-                  class="text-gray-500 transition hover:text-gray-500/75"
+                  class="{% if request.resolver_match.url_name == 'home' %}text-gray-900{% else %}text-gray-500{% endif %} transition hover:text-gray-500/75"
                   href="{% url 'website:home' %}"
                 >
                   Home
@@ -38,7 +38,7 @@
 
               <li>
                 <a
-                  class="text-gray-500 transition hover:text-gray-500/75"
+                  class="{% if request.resolver_match.url_name == 'about' %}text-gray-900{% else %}text-gray-500{% endif %} transition hover:text-gray-500/75"
                   href="{% url 'website:about' %}"
                   >About</a
                 >
@@ -46,7 +46,7 @@
 
               <li>
                 <a
-                  class="text-gray-500 transition hover:text-gray-500/75"
+                  class="{% if request.resolver_match.url_name == 'contact' %}text-gray-900{% else %}text-gray-500{% endif %} transition hover:text-gray-500/75"
                   href="{% url 'website:contact' %}"
                 >
                   Contact
@@ -56,7 +56,7 @@
               {% if user.is_authenticated %}
               <li>
                 <a
-                  class="text-gray-500 transition hover:text-gray-500/75"
+                  class="{% if request.resolver_match.url_name == 'todo_list_html' %}text-gray-900{% else %}text-gray-500{% endif %} transition hover:text-gray-500/75"
                   href="{% url 'todos:todo_list_html' %}"
                 >
                   View Todos

@@ -2,6 +2,13 @@ from django.shortcuts import redirect, render
 from .models import Todo
 
 
+def show_request_info(request):
+    print('url name: ', request.resolver_match.url_name)
+    print('app name: ', request.resolver_match.app_name)
+    print('namespace: ', request.resolver_match.namespace)
+    print('view name: ', request.resolver_match.view_name)
+    print('args: ', request.resolver_match.args)
+    print('kwargs: ', request.resolver_match.kwargs)
 
 def create_todo(request):
     """
