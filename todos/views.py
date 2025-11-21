@@ -2,14 +2,6 @@ from django.shortcuts import redirect, render
 from .models import Todo
 
 
-def show_request_info(request):
-    print('url name: ', request.resolver_match.url_name)
-    print('app name: ', request.resolver_match.app_name)
-    print('namespace: ', request.resolver_match.namespace)
-    print('view name: ', request.resolver_match.view_name)
-    print('args: ', request.resolver_match.args)
-    print('kwargs: ', request.resolver_match.kwargs)
-
 def create_todo(request):
     """
     This view on GET 
@@ -18,6 +10,7 @@ def create_todo(request):
     it processes the form data and saves it to the database
     """
 
+    # get the status choices
     todo_status = Todo.STATUS_CHOICES
 
     # possible origin is the add todo form
@@ -40,16 +33,22 @@ def create_todo(request):
     })
 
 def read_todos(request):
+    """
+    This view reads the todos for the user in context (the logged in user)
+
+    """
 
     # check for the user
     user = request.user
 
+    # check if the user is authenticated, if not redirect to the login page
     if not user or not user.is_authenticated:
         return redirect('website:login')
         
     # get the todos for the user
     todos = Todo.objects.filter(user=user)
 
+    # create a list of todos with the id, title, description, and status
     data = [
         {
             'id':todo.id,
@@ -90,11 +89,17 @@ def update_todo(request, todo_id):
 
 
 def delete_todo(request, todo_id):
+    """
+    This view deletes a todo for the user
+    """
     Todo.objects.filter(id=todo_id).delete()
     
     return redirect('todos:todo_list_html')
 
 
 def delete_todos(request):
-    
+    """
+    This view deletes all todos for the user
+    """
+    Todo.objects.filter(user=request.user).delete()
     return redirect('todos:todo_list_html')
