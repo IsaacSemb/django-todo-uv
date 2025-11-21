@@ -5,16 +5,27 @@ from django.shortcuts import redirect, render
 
 # Create your views here.
 def index(request):
+    """
+    This view renders the home page
+    """
     return render(request, 'website/home.html')
     
 def about(request):
+    """
+    This view renders the about page
+    """
     return render(request, 'website/about.html')
 
 def contact(request):
+    """
+    This view renders the contact page
+    """
     return render(request, 'website/contact.html')
 
 def login_page(request):
-
+    """
+    This view renders the login page
+    """
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -32,7 +43,9 @@ def login_page(request):
 
 
 def signup_page(request):
-
+    """
+    This view renders the signup page
+    """
     if request.method == 'POST':
         username = request.POST.get('username')
         email = request.POST.get('email')
@@ -58,6 +71,9 @@ def signup_page(request):
 
 
 def logout_user(request):
+    """
+    This view logs out the user
+    """
     logout(request)
     return redirect('website:home')
 
