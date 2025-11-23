@@ -4,7 +4,7 @@ from .models import Todo
 
 def create_todo(request):
     """
-    This view on GET 
+    This view on GET
     it gets you the form to use  
     but on POST (coming from the form its self)  
     it processes the form data and saves it to the database
@@ -54,7 +54,7 @@ def read_todos(request):
             'id':todo.id,
             'title':todo.title,
             'description':todo.description,
-            'status':todo.status,
+            'status':todo.get_status_display(),
         } for todo in todos
     ]
 

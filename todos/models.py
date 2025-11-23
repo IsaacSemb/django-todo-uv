@@ -51,5 +51,8 @@ class Todo(models.Model):
             models.Index(fields=["status"]),  # Makes filtering by status faster
         ]
 
+    def get_status_display(self):
+        return dict(self.STATUS_CHOICES)[self.status]
+
     def __str__(self):
-        return f"{self.title} -- {self.description}"
+        return f"{self.title} -> {self.user}"
