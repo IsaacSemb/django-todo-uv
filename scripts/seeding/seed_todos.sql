@@ -12,3 +12,14 @@ but we dont know the reverse of the hashing algorithm
 so using 123 as the password will not work
 so we chose to skip this method
  */
+
+
+ /* 
+ there is a way to obtain save the sql format of the database
+ we first use another way to seed the database
+ then we save that database to a sql file (dump the database)
+ from that sql file we can create a new database whenever we want
+
+ Another thing we can do is copy paste the sqlite database since it is a text file
+ we can then always use that database directly through a path variable
+  */
