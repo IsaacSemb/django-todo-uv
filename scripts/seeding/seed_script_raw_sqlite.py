@@ -33,10 +33,26 @@ print(__file__)
 print()
 
 # our database file name (to avoid repetition and potential mistakes)
-DATABASE_FILE = 'db.sqlite3'
+# this is the old way of doing it, it is not recommended to use it
+# cause for every seeding script we would have to add the database file name
+# and if we change the file name, we would have to change it in every script
+# DATABASE_FILE = 'db.sqlite3'
 
 # the absolute path to the database file
-DB_PATH = Path(__file__).parent.parent.parent / DATABASE_FILE
+# this is the old way of doing it, it is not recommended to use it
+# DB_PATH = Path(__file__).parent.parent.parent / DATABASE_FILE
+
+# SAFER WAY TO GET THE DATABASE PATH
+# Load DB path from Django settings to centralize configuration
+from django.conf import settings
+
+# If using the default DB, settings.DATABASES['default']['NAME'] gives the path (could be pathlib.Path or str)
+DB_FROM_SETTINGS = settings.DATABASES['default']['NAME']
+if isinstance(DB_FROM_SETTINGS, Path):
+    DB_PATH = DB_FROM_SETTINGS
+else:
+    DB_PATH = Path(DB_FROM_SETTINGS)
+
 
 print('\n DBPATH name')
 print(DB_PATH)
