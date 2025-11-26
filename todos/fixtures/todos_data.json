@@ -1,0 +1,302 @@
+[
+{
+  "model": "todos.todo",
+  "pk": 1,
+  "fields": {
+    "title": "Buy groceries",
+    "description": "Buy groceries for the week",
+    "status": "pending",
+    "created_at": "2025-11-26T02:22:43.153Z",
+    "updated_at": "2025-11-26T02:22:43.153Z",
+    "user": 1
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 2,
+  "fields": {
+    "title": "Finish the project",
+    "description": "Finish the project for the week",
+    "status": "in_progress",
+    "created_at": "2025-11-26T02:22:43.159Z",
+    "updated_at": "2025-11-26T02:22:43.159Z",
+    "user": 1
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 3,
+  "fields": {
+    "title": "Read a book",
+    "description": "Read a harry potter book",
+    "status": "completed",
+    "created_at": "2025-11-26T02:22:43.164Z",
+    "updated_at": "2025-11-26T02:22:43.164Z",
+    "user": 1
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 4,
+  "fields": {
+    "title": "Go for a walk",
+    "description": "Go for a walk in the park",
+    "status": "pending",
+    "created_at": "2025-11-26T02:22:43.169Z",
+    "updated_at": "2025-11-26T02:22:43.169Z",
+    "user": 1
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 5,
+  "fields": {
+    "title": "Wash the dishes",
+    "description": "Wash the dishes after the meal",
+    "status": "completed",
+    "created_at": "2025-11-26T02:22:43.175Z",
+    "updated_at": "2025-11-26T02:22:43.175Z",
+    "user": 1
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 6,
+  "fields": {
+    "title": "Go Skiing",
+    "description": "Go Skiing with the family",
+    "status": "pending",
+    "created_at": "2025-11-26T02:22:43.182Z",
+    "updated_at": "2025-11-26T02:22:43.182Z",
+    "user": 2
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 7,
+  "fields": {
+    "title": "Go Swimming",
+    "description": "Go Swimming with the family",
+    "status": "pending",
+    "created_at": "2025-11-26T02:22:43.188Z",
+    "updated_at": "2025-11-26T02:22:43.188Z",
+    "user": 2
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 8,
+  "fields": {
+    "title": "Go Hiking",
+    "description": "Go Hiking with the family",
+    "status": "in_progress",
+    "created_at": "2025-11-26T02:22:43.193Z",
+    "updated_at": "2025-11-26T02:22:43.193Z",
+    "user": 2
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 9,
+  "fields": {
+    "title": "Go Camping",
+    "description": "Go Camping with the family",
+    "status": "completed",
+    "created_at": "2025-11-26T02:22:43.199Z",
+    "updated_at": "2025-11-26T02:22:43.199Z",
+    "user": 2
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 10,
+  "fields": {
+    "title": "Go Fishing",
+    "description": "Go Fishing with the family",
+    "status": "in_progress",
+    "created_at": "2025-11-26T02:22:43.204Z",
+    "updated_at": "2025-11-26T02:22:43.204Z",
+    "user": 2
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 11,
+  "fields": {
+    "title": "Finish Ticket Booking",
+    "description": "Finish Ticket Booking for the trip",
+    "status": "completed",
+    "created_at": "2025-11-26T02:22:43.210Z",
+    "updated_at": "2025-11-26T02:22:43.210Z",
+    "user": 3
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 12,
+  "fields": {
+    "title": "Book a Hotel",
+    "description": "Book a Hotel for the trip",
+    "status": "completed",
+    "created_at": "2025-11-26T02:22:43.215Z",
+    "updated_at": "2025-11-26T02:22:43.215Z",
+    "user": 3
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 13,
+  "fields": {
+    "title": "Book a Car",
+    "description": "Book a Car for the trip",
+    "status": "pending",
+    "created_at": "2025-11-26T02:22:43.220Z",
+    "updated_at": "2025-11-26T02:22:43.220Z",
+    "user": 3
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 14,
+  "fields": {
+    "title": "Book a Flight",
+    "description": "Book a Flight for the trip",
+    "status": "in_progress",
+    "created_at": "2025-11-26T02:22:43.226Z",
+    "updated_at": "2025-11-26T02:22:43.226Z",
+    "user": 3
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 15,
+  "fields": {
+    "title": "Book a Train",
+    "description": "Book a Train for the trip",
+    "status": "pending",
+    "created_at": "2025-11-26T02:22:43.231Z",
+    "updated_at": "2025-11-26T02:22:43.231Z",
+    "user": 3
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 16,
+  "fields": {
+    "title": "Buy a new phone",
+    "description": "Buy a new phone for my wife",
+    "status": "in_progress",
+    "created_at": "2025-11-26T02:22:43.237Z",
+    "updated_at": "2025-11-26T02:22:43.237Z",
+    "user": 4
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 17,
+  "fields": {
+    "title": "Buy a new laptop",
+    "description": "Buy a new laptop for my daughter",
+    "status": "pending",
+    "created_at": "2025-11-26T02:22:43.243Z",
+    "updated_at": "2025-11-26T02:22:43.243Z",
+    "user": 4
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 18,
+  "fields": {
+    "title": "Buy a new TV",
+    "description": "Buy a new TV for my family",
+    "status": "completed",
+    "created_at": "2025-11-26T02:22:43.248Z",
+    "updated_at": "2025-11-26T02:22:43.248Z",
+    "user": 4
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 19,
+  "fields": {
+    "title": "Buy a new fridge",
+    "description": "Buy a new fridge for my family",
+    "status": "pending",
+    "created_at": "2025-11-26T02:22:43.253Z",
+    "updated_at": "2025-11-26T02:22:43.253Z",
+    "user": 4
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 20,
+  "fields": {
+    "title": "Buy a new washing machine",
+    "description": "Buy a new washing machine for my family",
+    "status": "in_progress",
+    "created_at": "2025-11-26T02:22:43.259Z",
+    "updated_at": "2025-11-26T02:22:43.259Z",
+    "user": 4
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 21,
+  "fields": {
+    "title": "Check over the house",
+    "description": "Check over the house for any leaks or repairs",
+    "status": "completed",
+    "created_at": "2025-11-26T02:22:43.266Z",
+    "updated_at": "2025-11-26T02:22:43.266Z",
+    "user": 5
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 22,
+  "fields": {
+    "title": "Buy a new car",
+    "description": "Buy a new car for my family",
+    "status": "pending",
+    "created_at": "2025-11-26T02:22:43.272Z",
+    "updated_at": "2025-11-26T02:22:43.272Z",
+    "user": 5
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 23,
+  "fields": {
+    "title": "Wash Clothes",
+    "description": "Wash Clothes for the family",
+    "status": "pending",
+    "created_at": "2025-11-26T02:22:43.278Z",
+    "updated_at": "2025-11-26T02:22:43.278Z",
+    "user": 5
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 24,
+  "fields": {
+    "title": "Buy a new fridge",
+    "description": "Buy a new fridge for my family",
+    "status": "completed",
+    "created_at": "2025-11-26T02:22:43.284Z",
+    "updated_at": "2025-11-26T02:22:43.284Z",
+    "user": 5
+  }
+},
+{
+  "model": "todos.todo",
+  "pk": 25,
+  "fields": {
+    "title": "Buy a new washing machine",
+    "description": "Buy a new washing machine for my family",
+    "status": "in_progress",
+    "created_at": "2025-11-26T02:22:43.289Z",
+    "updated_at": "2025-11-26T02:22:43.290Z",
+    "user": 5
+  }
+}
+]

@@ -1,0 +1,92 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$lrTcwy1ueHvVp5hHHn2rfs$8I3S4Y1tyZeSgqVhzSgZHV64OjuzxlMLanFCZp3ygoc=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "isaacsemb96",
+    "first_name": "Isaac",
+    "last_name": "Semb",
+    "email": "isaacsemb96@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-26T02:22:41.686Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$aTaExSQiysj0EmyctXoj3T$3JUZhRDxJzqfPwCeibcqrIHErz0gfP7fkHtHQrTe78w=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "miriam97",
+    "first_name": "Miriam",
+    "last_name": "Masette",
+    "email": "miriam97@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-26T02:22:41.972Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$d3pPhD5XyUrypgpCFveX0r$U9GPVsnfilBhfeXko+1D4UsFN2cLOcpNSR9ZsI0ttfY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "kiwe",
+    "first_name": "Kiweewa",
+    "last_name": "Francis",
+    "email": "kiwe@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-26T02:22:42.264Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$dP1iSR6pkYfadJ9XPvp4pf$LW1htUiCLFkdAt/ID7LaTxZJMMIDbi3gVajSYVU6RTM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "mpanga",
+    "first_name": "Mpanga",
+    "last_name": "Nicho",
+    "email": "mpanga@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-26T02:22:42.562Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$eaZzLTRImLE0iEqsQEB4Lz$gM/IPY19VXsrtG46eJk8FAoeih8doQyCY7dcF5zxNHU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ssali",
+    "first_name": "Ssali",
+    "last_name": "Godfrey",
+    "email": "ssali@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-26T02:22:42.864Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

@@ -83,16 +83,63 @@ Fully Django-powered and way more convenient. You can easily tell how much bette
 ### 4. Django Fixtures
 **Location:** `todos/fixtures/initial_todos.json` and `todos/fixtures/initial_users.json`
 
-**How to run:**
+**What are Django fixtures?**
+
+Django fixtures are JSON/YAML files that Django can load into the database. They're Django's built-in way to save and restore data - portable, version-controllable, and reusable across different environments.
+
+**Setup:**
+
+First, create the fixtures directory:
+```bash
+mkdir -p todos/fixtures/
+```
+
+**Two Approaches:**
+
+**Approach A: Export existing data (easiest)**
+
+If you already have seeded data in your database (from any method), export it:
+
+```bash
+# Export users
+python manage.py dumpdata auth.User --indent 2 > todos/fixtures/initial_users.json
+
+# Export todos
+python manage.py dumpdata todos.Todo --indent 2 > todos/fixtures/initial_todos.json
+```
+
+This creates fixture files from your existing database automatically.
+
+**Approach B: Create fixtures manually**
+
+Convert your `mock_data` JSON into Django fixture format (different structure). Requires understanding the fixture format.
+
+**How to load fixtures:**
+
 ```bash
 python manage.py loaddata initial_users
 python manage.py loaddata initial_todos
 ```
 
-**Summary:**
-Django's built-in way to save/load data. Uses JSON/YAML files that are portable and version-controllable. The same fixture works across different environments.
+**Important Notes:**
 
-**Status:** ⏳ Not started yet
+1. **Loading order matters:** You must load data in a sensible order. You can't load todos before users because todos depend on users (foreign key integrity). If you try, you'll get:
+   ```
+   django.db.utils.IntegrityError: Problem installing fixtures
+   ```
+   Always load parent models before child models.
+
+2. **Fixture naming is strict:** Django looks for fixtures in `<app>/fixtures/<name_of_fixture>`. 
+   - The fixture name in the command doesn't include the `.json` extension
+   - The filename must match exactly what you specify in `loaddata`
+   - Example: `loaddata initial_users` looks for `todos/fixtures/initial_users.json`
+
+3. **Django automatically finds fixtures:** The commands above will automatically look in `todos/fixtures/` directory for the files.
+
+**Summary:**
+Django's built-in way to save/load data. Uses JSON/YAML files that are portable and version-controllable. The same fixture works across different environments. Great for sharing initial data or test data between team members.
+
+**Status:** ✅ Completed
 
 ---
 
