@@ -1,0 +1,184 @@
+{
+  "todos": [
+    {
+      "user_id": 1,
+      "username": "isaacsemb96",
+      "todos": [
+        {
+          "id": 101,
+          "title": "Buy groceries",
+          "description": "Buy groceries for the week",
+          "status": "pending"
+        },
+        {
+          "id": 102,
+          "title": "Finish the project",
+          "description": "Finish the project for the week",
+          "status": "in_progress"
+        },
+        {
+          "id": 103,
+          "title": "Read a book",
+          "description": "Read a harry potter book",
+          "status": "completed"
+        },
+        {
+          "id": 104,
+          "title": "Go for a walk",
+          "description": "Go for a walk in the park",
+          "status": "pending"
+        },
+        {
+          "id": 105,
+          "title": "Wash the dishes",
+          "description": "Wash the dishes after the meal",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "user_id": 2,
+      "username": "miriam97",
+      "todos": [
+        {
+          "id": 201,
+          "title": "Go Skiing",
+          "description": "Go Skiing with the family",
+          "status": "pending"
+        },
+        {
+          "id": 202,
+          "title": "Go Swimming",
+          "description": "Go Swimming with the family",
+          "status": "pending"
+        },
+        {
+          "id": 203,
+          "title": "Go Hiking",
+          "description": "Go Hiking with the family",
+          "status": "in_progress"
+        },
+        {
+          "id": 204,
+          "title": "Go Camping",
+          "description": "Go Camping with the family",
+          "status": "completed"
+        },
+        {
+          "id": 205,
+          "title": "Go Fishing",
+          "description": "Go Fishing with the family",
+          "status": "in_progress"
+        }
+      ]
+    },
+    {
+      "user_id": 3,
+      "username": "kiwe",
+      "todos": [
+        {
+          "id": 301,
+          "title": "Finish Ticket Booking",
+          "description": "Finish Ticket Booking for the trip",
+          "status": "completed"
+        },
+        {
+          "id": 302,
+          "title": "Book a Hotel",
+          "description": "Book a Hotel for the trip",
+          "status": "completed"
+        },
+        {
+          "id": 303,
+          "title": "Book a Car",
+          "description": "Book a Car for the trip",
+          "status": "pending"
+        },
+        {
+          "id": 304,
+          "title": "Book a Flight",
+          "description": "Book a Flight for the trip",
+          "status": "in_progress"
+        },
+        {
+          "id": 305,
+          "title": "Book a Train",
+          "description": "Book a Train for the trip",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "user_id": 4,
+      "username": "mpanga",
+      "todos": [
+        {
+          "id": 401,
+          "title": "Buy a new phone",
+          "description": "Buy a new phone for my wife",
+          "status": "in_progress"
+        },
+        {
+          "id": 402,
+          "title": "Buy a new laptop",
+          "description": "Buy a new laptop for my daughter",
+          "status": "pending"
+        },
+        {
+          "id": 403,
+          "title": "Buy a new TV",
+          "description": "Buy a new TV for my family",
+          "status": "completed"
+        },
+        {
+          "id": 404,
+          "title": "Buy a new fridge",
+          "description": "Buy a new fridge for my family",
+          "status": "pending"
+        },
+        {
+          "id": 405,
+          "title": "Buy a new washing machine",
+          "description": "Buy a new washing machine for my family",
+          "status": "in_progress"
+        }
+      ]
+    },
+    {
+      "user_id": 5,
+      "username": "ssali",
+      "todos": [
+        {
+          "id": 501,
+          "title": "Check over the house",
+          "description": "Check over the house for any leaks or repairs",
+          "status": "completed"
+        },
+        {
+          "id": 502,
+          "title": "Buy a new car",
+          "description": "Buy a new car for my family",
+          "status": "pending"
+        },
+        {
+          "id": 503,
+          "title": "Wash Clothes",
+          "description": "Wash Clothes for the family",
+          "status": "pending"
+        },
+        {
+          "id": 504,
+          "title": "Buy a new fridge",
+          "description": "Buy a new fridge for my family",
+          "status": "completed"
+        },
+        {
+          "id": 505,
+          "title": "Buy a new washing machine",
+          "description": "Buy a new washing machine for my family",
+          "status": "in_progress"
+        }
+      ]
+    }
+  ]
+}

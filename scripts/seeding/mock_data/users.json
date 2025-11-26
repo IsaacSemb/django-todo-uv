@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "username": "isaacsemb96",
+        "first_name": "Isaac",
+        "last_name": "Semb",
+        "email": "isaacsemb96@gmail.com",
+        "password": "test1234"
+    },
+    {
+        "id": 2,
+        "username": "miriam97",
+        "first_name": "Miriam",
+        "last_name": "Masette",
+        "email": "miriam97@gmail.com",
+        "password": "test1234"
+    },
+    {
+        "id": 2,
+        "username": "kiwe",
+        "first_name": "Kiweewa",
+        "last_name": "Francis",
+        "email": "kiwe@gmail.com",
+        "password": "test1234"
+    },
+    {
+        "id": 2,
+        "username": "mpanga",
+        "first_name": "Mpanga",
+        "last_name": "Nicho",
+        "email": "mpanga@gmail.com",
+        "password": "test1234"
+    },
+    {
+        "id": 2,
+        "username": "ssali",
+        "first_name": "Ssali",
+        "last_name": "Godfrey",
+        "email": "ssali@gmail.com",
+        "password": "test1234"
+    }
+]
