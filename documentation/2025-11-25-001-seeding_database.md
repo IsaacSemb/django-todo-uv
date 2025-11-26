@@ -160,16 +160,69 @@ The trick behind this is to know the structure of the fixture files, how fixture
 
 **Location:** `todos/management/commands/seed_todos.py`
 
+**Directory Structure Required:**
+
+```
+todos/
+└── management/
+    ├── __init__.py          # Empty file (makes it a Python package)
+    └── commands/
+        ├── __init__.py      # Empty file (makes it a Python package)
+        └── seed_todos.py    # Your command file
+```
+
 **How to run:**
 
 ```bash
 python manage.py seed_todos
+
+# With custom file paths
+python manage.py seed_todos --users-file path/to/users.json --todos-file path/to/todos.json
+
+# See help
+python manage.py seed_todos --help
+```
+
+**Key Concepts:**
+
+1. **Command name = filename:** The command name comes from the filename (without `.py`). So `seed_todos.py` becomes `python manage.py seed_todos`.
+
+2. **No manual Django setup:** Unlike standalone scripts, management commands don't need `django.setup()` - Django handles it automatically.
+
+3. **Inherits from BaseCommand:** All management commands inherit from `BaseCommand` which provides structure and utilities.
+
+4. **Shared utilities:** We created `seeding_utils.py` to avoid code duplication. Both `seed_todos` and `seed_all` use the same functions.
+
+**Additional Command: `seed_all`**
+
+We also created `seed_all.py` which acts as an orchestrator that can call different seeding methods:
+
+```bash
+# Use script method (default)
+python manage.py seed_all
+
+# Use fixtures
+python manage.py seed_all --method fixtures
+
+# Use another command
+python manage.py seed_all --method command
+
+# Try all methods
+python manage.py seed_all --method all
 ```
 
 **Summary:**
-Django's recommended way to create reusable seeding commands. Follows Django conventions and can accept command-line arguments.
+Django's recommended way to create reusable seeding commands. Follows Django conventions, can accept command-line arguments, and is discoverable via `python manage.py help`. No manual setup needed - Django handles everything. We've also created shared utilities (`seeding_utils.py`) to avoid code duplication across different commands.
 
-**Status:** ⏳ Not started yet
+**Key advantages:**
+- No Django setup code needed
+- Discoverable via `python manage.py help`
+- Can accept command-line arguments
+- Uses Django's output styling (`self.style.SUCCESS`, `self.style.ERROR`)
+- Reusable and testable
+- Can call other commands using `call_command()`
+
+**Status:** ✅ Completed
 
 ---
 
@@ -214,7 +267,9 @@ django-todo-uv/
         ├── __init__.py
         └── commands/
             ├── __init__.py
-            ├── seed_todos.py                 # Method #5: Basic command
+            ├── seeding_utils.py               # Shared utilities (no duplication!)
+            ├── seed_todos.py                  # Method #5: Basic command
+            ├── seed_all.py                    # Orchestrator command
             └── seed_todos_faker.py            # Method #6: Faker command
 ```
 
@@ -225,4 +280,8 @@ django-todo-uv/
 - **Password hashing** is the main reason raw SQL is impractical for Django user seeding
 - **Django ORM** is way more convenient than raw SQL - less code, more safety
 - **Method 3** (Django Script) is the sweet spot between learning and practicality
+- **Method 5** (Management Commands) is the Django-recommended way - no setup needed, discoverable, and follows conventions
+- **Shared utilities** (`seeding_utils.py`) help avoid code duplication across different seeding methods
+- **Command naming** in Django: the command name comes from the filename (without `.py` extension)
 - You can save a seeded database as a snapshot and restore it later (useful for quick resets)
+- Management commands can call other commands using `call_command()` from `django.core.management`
