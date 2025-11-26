@@ -10,4 +10,4 @@ wheels/
 .venv
 .pytest_cache
 playground/
-db.sqlite3
+app.db
