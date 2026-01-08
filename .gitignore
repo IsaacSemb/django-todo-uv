@@ -11,3 +11,5 @@ wheels/
 .pytest_cache
 playground/
 app.db
+.env
+db.sqlite3
