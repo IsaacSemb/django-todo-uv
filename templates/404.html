@@ -1,0 +1,74 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Page Not Found - Todo App{% endblock %}
+
+{% block content %}
+<section class="bg-white py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <!-- Large 404 number with icon -->
+      <div class="flex flex-col items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-24 text-gray-400">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+        </svg>
+        <h1 class="mt-6 text-6xl font-bold text-gray-900 sm:text-7xl">
+          404
+        </h1>
+      </div>
+      
+      <!-- Error message -->
+      <h2 class="mt-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Page Not Found
+      </h2>
+      
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        Oops! The page you're looking for doesn't exist or has been moved.
+      </p>
+      
+      <p class="mt-2 text-base text-gray-500">
+        The URL you requested may have been deleted, renamed, or never existed.
+      </p>
+      
+      <!-- Navigation buttons -->
+      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a 
+          class="inline-block rounded border border-gray-900 bg-gray-900 px-6 py-3 font-medium text-white shadow-sm transition-colors hover:bg-gray-800" 
+          href="{% url 'website:home' %}"
+        >
+          Go to Home
+        </a>
+        
+        <a 
+          class="inline-block rounded border border-gray-300 px-6 py-3 font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-50" 
+          href="javascript:history.back()"
+        >
+          Go Back
+        </a>
+      </div>
+      
+      <div class="mt-12 border-t border-gray-200 pt-12">
+        <p class="text-sm font-semibold text-gray-900">Quick Links</p>
+        <div class="mt-4 flex flex-wrap justify-center gap-4 text-sm">
+          <a href="{% url 'website:home' %}" class="text-gray-600 transition hover:text-gray-900">
+            Home
+          </a>
+          <span class="text-gray-300">•</span>
+          <a href="{% url 'website:about' %}" class="text-gray-600 transition hover:text-gray-900">
+            About
+          </a>
+          <span class="text-gray-300">•</span>
+          <a href="{% url 'website:contact' %}" class="text-gray-600 transition hover:text-gray-900">
+            Contact
+          </a>
+          {% if user.is_authenticated %}
+          <span class="text-gray-300">•</span>
+          <a href="{% url 'todos:todo_list_html' %}" class="text-gray-600 transition hover:text-gray-900">
+            My Todos
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
