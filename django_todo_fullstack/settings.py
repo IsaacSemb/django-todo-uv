@@ -30,14 +30,14 @@ print("environment variables set up successfully\n")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = "django-insecure-4!zl56^gb0^s94pdtiuyy(6%9f!b=(tp&khrz=#hxlhmde*i^^"
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = env("SECRET_KEY", default="django-insecure-4!zl56^gb0^s94pdtiuyy(6%9f!b=(tp&khrz=#hxlhmde*i^^")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = env("DEBUG")
+DEBUG = env("DEBUG", default=False)
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["*"])
 
 
 
@@ -96,7 +96,7 @@ WSGI_APPLICATION = "django_todo_fullstack.wsgi.application"
 #     }
 # }
 DATABASES = {
-    "default": env.db_url()
+    "default": env.db_url(default="sqlite:///db.sqlite3")
 }
 
 if DEBUG:
