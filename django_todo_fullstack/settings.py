@@ -138,6 +138,13 @@ USE_I18N = True
 
 USE_TZ = True
 
+# for the login required decorator
+# LOGIN_URL = '/login/'
+# LOGIN_REDIRECT_URL = '/todos/'
+
+# works with url names, and it is the preferred way
+LOGIN_URL = 'website:login'
+LOGIN_REDIRECT_URL = 'todos:todo_list_html'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
