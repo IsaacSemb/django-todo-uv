@@ -26,4 +26,8 @@ jobs:
       run: uv sync --locked
     
     - name: Run Django check
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        DEBUG: ${{ secrets.DEBUG }}
+        ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
       run: uv run python manage.py check
