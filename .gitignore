@@ -13,3 +13,5 @@ playground/
 app.db
 .env
 db.sqlite3
+staticfiles/
+media/
