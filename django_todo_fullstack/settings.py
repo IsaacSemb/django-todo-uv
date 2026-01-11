@@ -34,7 +34,7 @@ SECRET_KEY = env("SECRET_KEY", default="django-insecure-4!zl56^gb0^s94pdtiuyy(6%
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = env("DEBUG", default=False)
+DEBUG = env("DEBUG", default=True)
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["*"])
@@ -70,7 +70,7 @@ ROOT_URLCONF = "django_todo_fullstack.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -99,14 +99,7 @@ DATABASES = {
     "default": env.db_url(default="sqlite:///db.sqlite3")
 }
 
-if DEBUG:
-    print(f"""
--------------------------------
-DEBUG: {DEBUG}
-ALLOWED_HOSTS: {ALLOWED_HOSTS}
-DATABASES: {DATABASES}
--------------------------------
-""")
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -159,12 +152,27 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Security settings for production
-if not DEBUG:
-    SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_BROWSER_XSS_FILTER = True
-    SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_SSL_REDIRECT =  not DEBUG
+SESSION_COOKIE_SECURE =  not DEBUG
+CSRF_COOKIE_SECURE =  not DEBUG
+SECURE_BROWSER_XSS_FILTER =  not DEBUG
+SECURE_CONTENT_TYPE_NOSNIFF =  not DEBUG
+
+
+if DEBUG:
+    print(f"""
+-------------------------------
+BASE_DIR: {BASE_DIR}
+DEBUG: {DEBUG}
+ALLOWED_HOSTS: {ALLOWED_HOSTS}
+DATABASES: {DATABASES}
+SECURE_SSL_REDIRECT: {SECURE_SSL_REDIRECT}
+SESSION_COOKIE_SECURE: {SESSION_COOKIE_SECURE}
+CSRF_COOKIE_SECURE: {CSRF_COOKIE_SECURE}
+SECURE_BROWSER_XSS_FILTER: {SECURE_BROWSER_XSS_FILTER}
+SECURE_CONTENT_TYPE_NOSNIFF: {SECURE_CONTENT_TYPE_NOSNIFF}
+-------------------------------
+""")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
