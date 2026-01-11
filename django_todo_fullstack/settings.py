@@ -100,11 +100,13 @@ DATABASES = {
 }
 
 if DEBUG:
-    print(f"--------------------------------")
-    print(f"DEBUG: {DEBUG}")
-    print(f"ALLOWED_HOSTS: {ALLOWED_HOSTS}")
-    print(f"DATABASES: {DATABASES}")
-    print(f"--------------------------------")
+    print(f"""
+-------------------------------
+DEBUG: {DEBUG}
+ALLOWED_HOSTS: {ALLOWED_HOSTS}
+DATABASES: {DATABASES}
+-------------------------------
+""")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -140,7 +142,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+# Static files configuration for production
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Where collectstatic puts files
+
+# Media files (if you have user uploads)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+# Security settings for production
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
