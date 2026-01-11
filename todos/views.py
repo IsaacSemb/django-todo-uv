@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from .models import Todo
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -71,12 +71,18 @@ def update_todo(request, todo_id):
     """
     Edit view: GET shows form with existing todo data,
     POST updates the todo in database
+
+    Security: Only allows users to update their own todos.
+    Returns 404 if todo doesn't exist or doesn't belong to the user.
     """
     todo_status = Todo.STATUS_CHOICES
 
+    # Get the todo and verify ownership - returns 404 if not found or not owned
+    # This prevents users from accessing/modifying other users' todos
+    todo = get_object_or_404(Todo, id=todo_id, user=request.user)
+
     if request.method == "GET":
-        # Fetch the todo to edit
-        todo = Todo.objects.get(id=todo_id)
+        # Fetch the todo to edit (already retrieved above with ownership check)
         return render(
             request,
             "todos/add_todo.html",
@@ -86,23 +92,30 @@ def update_todo(request, todo_id):
             },
         )
 
-    # POST: Update the existing todo
+    # POST: Update the existing todo (ownership already verified above)
     if request.method == "POST":
-        Todo.objects.filter(id=todo_id).update(
-            title=request.POST["title"],
-            description=request.POST["description"],
-            status=request.POST["status"],
-        )
+        # Update using the todo object we already retrieved (ensures ownership)
+        todo.title = request.POST["title"]
+        todo.description = request.POST["description"]
+        todo.status = request.POST["status"]
+        todo.save()
         return redirect("todos:todo_list_html")
+
     return redirect("todos:todo_list_html")
 
 
 @login_required
 def delete_todo(request, todo_id):
     """
-    This view deletes a todo for the user
+    This view deletes a todo for the user.
+
+    Security: Only allows users to delete their own todos.
+    Returns 404 if todo doesn't exist or doesn't belong to the user.
     """
-    Todo.objects.filter(id=todo_id).delete()
+    # Get the todo and verify ownership - returns 404 if not found or not owned
+    # This prevents users from deleting other users' todos
+    todo = get_object_or_404(Todo, id=todo_id, user=request.user)
+    todo.delete()
     return redirect("todos:todo_list_html")
 
 
