@@ -83,3 +83,17 @@ Always regenerate it from `pyproject.toml` to avoid divergence.
 **Mental model:**
 `pyproject.toml` → canonical dependency definition
 `requirements.txt` → deployment adapter for legacy tooling
+
+preparation for deployment
+
+shortcut to generate the secret key
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+
+check for problems
+    checking for problems in development
+        uv run python manage.py check 
+
+    checking for problems in production, we add the deploy flag
+        uv run python manage.py check --deploy
+
+uv run python manage.py collectstatic

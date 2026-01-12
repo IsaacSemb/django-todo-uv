@@ -30,6 +30,9 @@ print("environment variables set up successfully\n")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = "django-insecure-4!zl56^gb0^s94pdtiuyy(6%9f!b=(tp&khrz=#hxlhmde*i^^"
+
+# generate a new secret key
+# python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 SECRET_KEY = env("SECRET_KEY", default="django-insecure-4!zl56^gb0^s94pdtiuyy(6%9f!b=(tp&khrz=#hxlhmde*i^^")
 
 # SECURITY WARNING: don't run with debug turned on in production!
